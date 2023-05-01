@@ -6,17 +6,14 @@ public class Produto {
     private String nome;
     private Double valor;
 
-    public Produto(String nome, Double valor) {
+    public Produto(Long id, String nome, Double valor) {
+        this.id = id;
         this.nome = nome;
         this.valor = valor;
     }
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getNome() {
@@ -38,5 +35,13 @@ public class Produto {
 
     public boolean equals(Produto prodComparar) {
         return prodComparar.getNome().equals(nome);
+    }
+
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(nome);
+        sb.append(" R$");
+        sb.append(valor);
+        return sb.toString();
     }
 }
