@@ -35,6 +35,30 @@ public class Comanda {
 	public void setPago(Boolean pago) {
 		this.pago = pago;
 	}
+	
+	public String getItens(){
+		StringBuilder string = new StringBuilder();
+		
+		string.append("----");
+		string.append(" Comanda: ");
+		string.append(this.id);
+		string.append(" ----");
+		Double vlTotal = 0.00;
+
+		for (ItemPedido item : itens) {
+			string.append("\n");
+			string.append(item.getQuantidade());
+			string.append("x ");
+			string.append(item.getProduto().getNome());
+			string.append(": R$");
+			string.append(item.getValor());
+			vlTotal += item.getValor();
+		}
+		
+		string.append("\n-------------------");
+		
+		return string.toString();
+	}
 
 	public void addItemPedido(ItemPedido itemPedido) {
 		ItemPedido itemAtual = getItemAtual(itemPedido);
@@ -77,6 +101,7 @@ public class Comanda {
 	@Override
 	public String toString() {
 		StringBuilder string = new StringBuilder();
+		
 		string.append("----");
 		string.append(" Comanda: ");
 		string.append(this.id);

@@ -26,9 +26,6 @@ public interface AppServer {
     @WebMethod String addItemComanda(Long idComanda, Long idProduto, Integer qtd);
     
     @WebMethod String removeItemComanda(Long idComanda, Long idProduto, Integer qtd);
-//
-//    @WebMethod float listarItensComanda(Long idComanda, Long idProduto, Integer qtd);
 
-
-
+    @WebMethod String listarItensComanda(Long idComanda);
 }

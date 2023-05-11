@@ -6,6 +6,7 @@ import app.entities.Produto;
 
 import javax.jws.WebService;
 import java.util.HashMap;
+import java.util.List;
 
 @WebService(endpointInterface = "app.AppServer")
 public class AppServerImpl {
@@ -90,5 +91,14 @@ public class AppServerImpl {
             return "Comanda não encontrada";
         }
     }
-
+    
+    public String listarItensComanda(Long idComanda){
+    	if (!comandas.containsKey(idComanda)) {
+    		return "Comanda não encontrada";
+    	}
+    	
+    	Comanda comanda = comandas.get(idComanda);
+    	
+		return comanda.getItens();
+    }
 }

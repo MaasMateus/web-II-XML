@@ -16,7 +16,7 @@ class AppClient {
         app.putComanda();
         app.putComanda();
         app.putComanda();
-
+        
         app.putProduto("Torre de Chopp", 30.00);
         app.putProduto("Batata frita", 35.00);
         app.putProduto("Água sem gás 350ml", 6.50);
@@ -57,5 +57,9 @@ class AppClient {
         System.out.println(app.getComanda(4L));
         app.removeItemComanda(4L, 4L, 1);
         System.out.println(app.getComanda(4L));
+        
+        //Teste listar itens comanda
+        System.out.println(app.listarItensComanda(2L));
+        System.out.println(app.listarItensComanda(77L));
     }
 }

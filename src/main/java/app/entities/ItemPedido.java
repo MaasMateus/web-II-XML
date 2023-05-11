@@ -31,5 +31,5 @@ public class ItemPedido {
 
     public void addQuantidade(Integer novaQuantidade) {
         this.quantidade = this.getQuantidade() + novaQuantidade;
-    }
+    }    
 }
