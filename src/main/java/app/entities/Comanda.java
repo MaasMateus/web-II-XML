@@ -76,16 +76,24 @@ public class Comanda {
 	@Override
 	public String toString() {
 		StringBuilder string = new StringBuilder();
-
-		string.append("Comanda: ");
+		string.append("----");
+		string.append(" Comanda: ");
 		string.append(this.id);
+		string.append(" ----");
+		Double vlTotal = 0.0;
 
 		for (ItemPedido item : itens) {
 			string.append("\n");
-			string.append(item.getProduto().getNome() + " ");
+			string.append(item.getQuantidade());
+			string.append("x ");
+			string.append(item.getProduto().getNome());
+			string.append(": R$");
 			string.append(item.getValor());
+			vlTotal += item.getValor();
 		}
-
+		string.append("\nTotal: R$");
+		string.append(vlTotal);
+		string.append("\n-------------------");
 		return string.toString();
 	}
 
