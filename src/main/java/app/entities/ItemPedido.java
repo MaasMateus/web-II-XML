@@ -5,6 +5,8 @@ public class ItemPedido {
     public Produto produto;
     public Integer quantidade;
 
+    public ItemPedido() {}
+
     public ItemPedido(Produto produto, Integer novaQuantidade) {
         this.produto = produto;
         this.quantidade = novaQuantidade;

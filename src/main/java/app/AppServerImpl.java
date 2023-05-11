@@ -4,7 +4,6 @@ import app.entities.Comanda;
 import app.entities.ItemPedido;
 import app.entities.Produto;
 
-import javax.jws.WebMethod;
 import javax.jws.WebService;
 import java.util.HashMap;
 
@@ -77,5 +76,19 @@ public class AppServerImpl {
         }
     }
 
+    public String removeItemComanda(Long idComanda, Long idProduto, Integer qtd){
+        if (comandas.containsKey(idComanda)) {
+            Comanda comanda = comandas.get(idComanda);
+            if (produtos.containsKey(idProduto)) {
+                Produto produto = produtos.get(idProduto);
+                comanda.removeItemPedido(new ItemPedido(produto, qtd));
+                return "Item removido com sucesso!";
+            } else {
+                return "Produto não encontrado!";
+            }
+        } else {
+            return "Comanda não encontrada";
+        }
+    }
 
 }
