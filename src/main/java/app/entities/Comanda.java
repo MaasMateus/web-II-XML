@@ -1,5 +1,6 @@
 package app.entities;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -80,7 +81,7 @@ public class Comanda {
 		string.append(" Comanda: ");
 		string.append(this.id);
 		string.append(" ----");
-		Double vlTotal = 0.0;
+		Double vlTotal = 0.00;
 
 		for (ItemPedido item : itens) {
 			string.append("\n");
@@ -91,8 +92,9 @@ public class Comanda {
 			string.append(item.getValor());
 			vlTotal += item.getValor();
 		}
+		DecimalFormat df = new DecimalFormat("0.00");
 		string.append("\nTotal: R$");
-		string.append(vlTotal);
+		string.append(df.format(vlTotal));
 		string.append("\n-------------------");
 		return string.toString();
 	}

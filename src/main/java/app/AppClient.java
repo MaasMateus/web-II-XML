@@ -53,7 +53,9 @@ class AppClient {
         //Teste Remover item Comanda
         app.addItemComanda(4L,4L,2);
         System.out.println(app.getComanda(4L));
-        app.removeItemComanda(4L, 4L, 2);
+        app.removeItemComanda(4L, 4L, 1);
+        System.out.println(app.getComanda(4L));
+        app.removeItemComanda(4L, 4L, 1);
         System.out.println(app.getComanda(4L));
     }
 }
